@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {downloadButton = id; laterButton = id; okButton = id; }; 
+            CLASS = MBUpdateController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                downloadButton = NSButton; 
+                newUpdateWindow = NSWindow; 
+                noUpdateWindow = NSWindow; 
+                okButton = NSButton; 
+                versionStringTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

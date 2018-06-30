@@ -1,0 +1,57 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {allowNaturalLanguageSwitch = id; formatInput = id; }; 
+            CLASS = MBDateFormatSetterViewController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                allowNaturalLanguageButton = NSButton; 
+                exampleTextField = NSTextField; 
+                explanationTextView = NSTextView; 
+                formatTableView = NSTableView; 
+                formatTextField = NSTextField; 
+                theView = NSView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = MBFormatSetterController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                dateFormatSetterController = MBDateFormatSetterViewController; 
+                numberFormatSetterController = MBNumberFormatSetterViewController; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                currencySymbolInput = id; 
+                numberOfDecimalsChange = id; 
+                switchCurrencyType = id; 
+                switchDecimalsDigits = id; 
+                switchNumberType = id; 
+                switchThoudsandSeparator = id; 
+                switchUseRedColorForNegatives = id; 
+            }; 
+            CLASS = MBNumberFormatSetterViewController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                currencyRadioButtonCell = NSButtonCell; 
+                currencySymbolLabel = NSTextField; 
+                currencySymbolTextField = NSTextField; 
+                negativeExampleTextField = NSTextField; 
+                numberOfDigitsStepper = NSStepper; 
+                numberOfDigitsTextField = NSTextField; 
+                numberRadioButtonCell = NSButtonCell; 
+                positiveExampleTextField = NSTextField; 
+                theView = NSView; 
+                useDecimalDigitsButton = NSButton; 
+                useRedColorOnNegativesButton = NSButton; 
+                useThousandSeparatorButton = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

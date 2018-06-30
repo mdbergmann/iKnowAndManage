@@ -1,0 +1,305 @@
+﻿// answers
+"Yes" = "Ja	";
+"No" = "Nein";
+"Cancel" = "Abbrechen";
+"OK" = "OK";
+"Error" = "Fehler";
+"Warning" = "Warnung";
+"Info" = "Info";
+"Quit" = "Beenden";
+"Try" = "Ausprobieren";
+"Unchanged" = "Unverändert";
+"Changed" = "Geändert";
+"Encrypted" = "Verschlüsselt";
+"Decrypted" = "Entschlüsselt";
+"Unknown" = "Unbekannt";
+"Unregistered" = "Unregistriert";
+"Imported" = "Importiert";
+"Link" = "Verknüpfung";
+"External" = "Extern";
+"Internal" = "Intern";
+"Image" = "Bild";
+"File" = "Datei";
+"DATASTORE" = "DATEN";
+"TEMPLATES" = "VORLAGEN";
+"IMPORTS" = "IMPORTS";
+
+// alert
+"CorrectSerialNumberThanks" = "Seriennummer ist richtig, danke für den Kauf.";
+"WrongSerialNumber" = "Seriennummer ist nicht bekannt.";
+"PleaseInsertNameAndSerNum" = "Bitte geben Sie Ihren Namen und Seriennummer zum Registrieren ein.";
+"UnableToCreateAppSupportFolder" = "Fehler beim Erstellen des Verzeichnisses in \"Application Support\".";
+"UnableToFindAppSupportFolder" = "Fehler beim Auffinden des \"Application Support\" Verzeichnisses.";
+"UnableToDetermineDatabaseFile" = "Fehler beim Auffinden der Datenbank-Datei.";
+"UnableToInitializeDB" = "Fehler beim Initialisieren der Datenbank.";
+"UnableToInitializeDBTables" = "Fehler beim Initialisieren der Datenbank-Tabellen.";
+"UnableToReadDBData" = "Fehler beim Lesen der Daten aus der Datenbank.";
+"DBInitError" = "Fehler beim Initialisieren der Datenbank-Tabellen.";
+"DBInitTablesError" = "Fehler beim Initialisieren der Datenbank-Tabellen.";
+"DBCheckVersionError" = "Fehler beim Lesen der Datenbank-Version.";
+"DBCheckRegError" = "Fehler beim Lesen der Registrierungsinformationen.";
+"OSTooOld" = "Ihr System wird leider nicht mehr Unterstützt. Bitte Erneuern Sie Ihr Betriebssystem.";
+"UnableToMakeBackupOfDB" = "Eine Sicherungskopie Ihrer Datenbank konnte nicht erstellt werden. Bitte wenden Sie sich an den Support. Wollen Sie weiter machen?";
+"ErrorCreatingTmpFolder" = "Einige Programm-Resourcen konnten nicht erstellt werden. Programm wird beendet. Bitte melden Sie dies dem Support.";
+"WrongDecryptionPasswordTitle" = "Falsches Passwort für Entschlüsselung.";
+"WrongDecryptionPasswordMsgForMoreItemsToCome" = "Ihr angegebenes Entschlüsselungs-Passwort scheint falsch zu sein. Wollen sie Fortfahren mit der Entschlüsselung?";
+"WrongDecryptionPasswordMsgForNoMoreItemsToCome" = "Ihr angegebenes Entschlüsselungs-Passwort scheint falsch zu sein. Bitte wiederholen Sie mit richtigem Passwort.";
+"EncryptionFailureTitle" = "Fehler beim Verschlüsseln!";
+"EncryptionFailureMsg" = "Fehler beim Verschlüsseln eines oder mehrerer Werte!";
+"DecryptionFailureTitle" = "Fehler beim Entschlüsseln!";
+"DecryptionFailureMsg" = "Fehler beim Entschlüsseln eines oder mehrerer Werte!";
+"DecryptingOnlyOneItemValueTitle" = "Entschlüsseln der Info";
+"DecryptingOnlyOneItemValueMsg" = "Sie können nur einen Wert gleichzeitig Entschlüsseln.";
+"EncryptingOnlyOneItemValueTitle" = "Verschlüsseln der Info";
+"EncryptingOnlyOneItemValueMsg" = "Sie können nur einen Wert gleichzeitig Verschlüsseln.";
+"NoDefaultEncryptPWSetTitle" = "Kein Standart-Passwort gesetzt";
+"NoDefaultEncryptPWSetMsg" = "Es wurde kein Standart-Passwort gesetzt, bitte mache Sie das in den Einstellungen.";
+"BetaTestPhaseExpiredTitle" = "Beta Version ausgelaufen";
+"BetaTestPhaseExpiredMsg" = "Beta Testphase ist beendet.";
+"PbCopySizeToLargeTitle" = "Datengrösse zu gross zum Kopieren";
+"PbCopySizeToLargeMsg" = "Die Datengrösse zum Kopieren in die Zwischenablage ist zu gross. Versuchen Sie weniger Items oder Werte zu kopieren.";
+"ImportInProgressTitle" = "Importieren...";
+"ImportInProgressMsg" = "Datenimport ist gerade im Gange. Bitte warten Sie bis dies beendet ist.";
+"ExportInProgressTitle" = "Exportieren...";
+"ExportInProgressMsg" = "Datenexport ist gerade im Gange. Bitte warten Sie bis dies beendet ist.";
+"ExternalDataReallyEncryptTitel" = "Verschlüsseln von verknüpften Daten?";
+"ExternalDataReallyEncryptMsg" = "Dieser Wert hat mit externen Daten verknüpft. Wollen Sie diese wirklich verschlüsseln und überschreiben?";
+"FeatureDeactivatedInDemoTitle" = "Ausprobier-Modus";
+"FeatureDeactivatedInDemoMsg" = "Diese Funktion ist nicht im Ausprobier-Modus verfügbar.";
+"UnableToSaveDataTitle" = "Konnte Daten nicht speichern!";
+"UnableToSaveDataMsg" = "Konnte Daten nicht zum spezifizierten Ziel speichern!";
+"CannotAddToItemRefWithoutTargetTitle" = "Verknüpfung ohne Ziel";
+"CannotAddToItemRefWithoutTargetMsg" = "Hinzufügen eines Wertes zu einer Verknüpfung ohne Ziel ist nicht möglich!";
+"CannotImportToItemRefWithoutTargetTitle" = "Verknüpfung ohne Ziel";
+"CannotImportToItemRefWithoutTargetMsg" = "Importieren eines Wertes zu einer Verknüpfung ohne Ziel ist nicht möglich!";
+"CannotPasteToItemRefWithoutTargetTitle" = "Verknüpfung ohne Ziel";
+"CannotPasteToItemRefWithoutTargetMsg" = "Einfügen eines Wertes zu einer Verknüpfung ohne Ziel ist nicht möglich!";
+"MoreItemsSelectedForReferencingTitle" = "Mehrere selektiert";
+"MoreItemsSelectedForReferencingMsg" = "Wollen Sie wirklich eine Verknüpfung für jedes Element der Selektion erstellen?";
+"NoSelectionTitle" = "Keine Selektion";
+"NoSelectionMsg" = "Bitte selektieren Sie zuerst Items oder Werte.";
+"ReferenceNotInSameSubtreeTitle" = "Verknüpfungsziel im Subbaum";
+"ReferenceNotInSameSubtreeMsg" = "Verknüpfungsziele im Subbaum sind nicht erlaubt da dies zu Zirkeln führen würde!";
+"UpdateSiteUnavailableTitle" = "Aktualisierungseite nicht erreichbar";
+"UpdateSiteUnavailableMsg" = "Die Aktualisierungsseite ist Momentan nicht verfügbar. Versuchen Sie es später noch mal.";
+
+// alerts adding, deleting elements and attributes
+"CannotAddItemValueNoSelectedItem" = "Es ist kein Item selektiert an das Werte angefügt werden können. Selektieren Sie zuerst eines.";
+"CannotDelItemValueNoSelectedItemValue" = "Kein Wert zum löschen ist selektiert.";
+"CannotDelCurrentSelection" = "Keine Selektierung. Löschen nicht möglich!";
+"NoURL" = "Dies ist keine richtige URL!";
+"NoValidURL" = "Diese URL konnte nicht kontaktiert werden!";
+"CouldNotLoadFromLink" = "Konnte keine Daten von der angegebenen Verknüpfung laden. Stellen Sie sicher das das Ziel existiert!";
+"NoRegularFile" = "Nur reguläre Dateien, keine Verzeichnisse oder Links, können importiert werden!";
+
+// status messages
+"ItemViewUpdated" = "Item Liste aktualisiert!";
+"ItemValueListViewUpdated" = "Werte-Details aktualisiert!";
+"NewItemAdded" = "Neues Item hinzugefügt";
+"NewItemValueAdded" = "Neuen Wert hinzugefügt";
+"ItemDeleted" = "Item und alle Subitems wurden von der Liste entfernt";
+"UnableToCheckUpdate" = "Aktualisierung konnten nicht überprüft werden!";
+"TrialDaysLeft" = "Restliche Tage für Evaluation:";
+"TrialPeriodExpired" = "Entschuldigung, Ihre Evaluierungsphase ist abgelaufen. Wenn Sie das Programm mögen, kaufen Sie es.";
+"DisplayingXValuesOutOfY" = "Zeige %d von %d Werten";
+
+// progress sheet action messages
+"SavingTextEditorData" = "Speichere Text";
+"Importing..." = "Importieren...";
+"Exporting..." = "Exportieren...";
+"Pasting..." = "Einfügen...";
+
+// Growl messages
+"AlarmGrowlTitle" = "Datums Erinnerung!";
+"AlarmGrowlDescriptionOne" = "Eine Datums Erinnerung";
+"AlarmGrowlDescriptionMore" = "%i Datums Erinnerungen";
+
+// Toolbar stuff
+"NavigationItemLabel" = "Navigation";
+"NavigationItemPalette" = "Item Navigation";
+"NavigationItemTooltip" = "Item Vor/Zurück Navigation";
+"DeleteItemLabel" = "Löschen";
+"DeleteItemPalette" = "Item löschen";
+"DeleteItemTooltip" = "Lösche selektiertes Item";
+"AddItemLabel" = "Item hinzufügen";
+"AddItemPalette" = "Item hinzufügen";
+"AddItemTooltip" = "Hinzufügen eines Standart Items";
+"AddNormalItemLabel" = "Standart Item hinzufügen";
+"AddNormalItemPalette" = "Standart Item hinzufügen";
+"AddNormalItemTooltip" = "Hinzufügen eines Standart Items";
+"AddTableItemLabel" = "Tabellen Item hinzufügen";
+"AddTableItemPalette" = "Tabellen Item hinzufügen";
+"AddTableItemTooltip" = "Hinzufügen eines Tabellen Items";
+"AddTemplateItemLabel" = "Vorlage Item hinzufügen";
+"AddTemplateItemPalette" = "Vorlage Item hinzufügen";
+"AddTemplateItemTooltip" = "Hinzufügen eines Vorlage-Items";
+"AddContactItemLabel" = "Kontakt Item hinzufügen";
+"AddContactItemPalette" = "Kontakt Item hinzufügen";
+"AddContactItemTooltip" = "Hinzufügen eines Kontakt-Items";
+"AddItemValueItemLabel" = "Wert hinzufügen";
+"AddItemValueItemPalette" = "Wert hinzufügen";
+"AddItemValueItemTooltip" = "Hinzufügen eines Wertes an das aktuelle Item";
+"AddSimpleTextItemValueLabel" = "Text Wert hinzufügen";
+"AddSimpleTextItemValuePalette" = "Text Wert hinzufügen";
+"AddSimpleTextItemValueTooltip" = "Hinzufügen eines Text Wertes an das aktuelle Item";
+"AddExtendedTextItemValueLabel" = "RTF Text Wert hinzufügen";
+"AddExtendedTextItemValuePalette" = "RTF Text Wert hinzufügen";
+"AddExtendedTextItemValueTooltip" = "Hinzufügen eines RTF Text Wertes an das aktuelle Item";
+"AddNumberItemValueLabel" = "Nummer Wert hinzufügen";
+"AddNumberItemValuePalette" = "Nummer Wert hinzufügen";
+"AddNumberItemValueTooltip" = "Hinzufügen eines Nummer Wertes an das aktuelle Item";
+"AddCurrencyItemValueLabel" = "Währungs Wert hinzufügen";
+"AddCurrencyItemValuePalette" = "Währungs Wert hinzufügen";
+"AddCurrencyItemValueTooltip" = "Hinzufügen eines Währungs Wertes an das aktuelle Item";
+"AddBoolItemValueLabel" = "Booleschen Wert hinzufügen";
+"AddBoolItemValuePalette" = "Booleschen Wert hinzufügen";
+"AddBoolItemValueTooltip" = "Hinzufügen eines Booleschen Wertes an das aktuelle Item";
+"AddDateItemValueLabel" = "Datums Wert hunzufügen";
+"AddDateItemValuePalette" = "Datums Wert hunzufügen";
+"AddDateItemValueTooltip" = "Hinzufügen eines Datum Wertes an das aktuelle Item";
+"AddURLItemValueLabel" = "URL Wert hinzufügen";
+"AddURLItemValuePalette" = "URL Wert hinzufügen";
+"AddURLItemValueTooltip" = "Hinzufügen eines URL Wertes an das aktuelle Item";
+"AddFileItemValueLabel" = "Datei Wert hinzufügen";
+"AddFileItemValuePalette" = "Datei Wert hinzufügen";
+"AddFileItemValueTooltip" = "Hinzufügen eines Datei Wertes an das aktuelle Item";
+"AddImageItemValueLabel" = "Bild Wert hinzufügen";
+"AddImageItemValuePalette" = "Bild Wert hinzufügen";
+"AddImageItemValueTooltip" = "Hinzufügen eines Bild Wertes an das aktuelle Item";
+"AddPDFItemValueLabel" = "PDF Wert hinzufügen";
+"AddPDFItemValuePalette" = "PDF Wert hinzufügen";
+"AddPDFItemValueTooltip" = "Hinzufügen eines PDF Wertes an das aktuelle Item";
+"MainViewAlignmentItemLabel" = "Ausrichtung";
+"MainViewAlignmentItemPalette" = "Ausrichtung der Hauptanzeige";
+"MainViewAlignmentItemTooltip" = "Ausrichtung der Hauptanzeige ändern";
+"ViewKindSegmentItemLabel" = "Anzeige";
+"ViewKindSegmentItemPalette" = "Anzeige";
+"ViewKindSegmentItemTooltip" = "Anzeige Ändern";
+"InfoItemLabel" = "Information
+";
+"InfoItemPalette" = "Information
+";
+"InfoItemTooltip" = "Information
+";
+"PrefsItemLabel" = "Einstellungen";
+"PrefsItemPalette" = "Einstellungen";
+"PrefsItemTooltip" = "Einstellungen";
+"UpItemLabel" = "Hoch";
+"UpItemPalette" = "Anzeige hoch";
+"UpItemTooltip" = "Obere Anzeige verkleinern";
+"DownItemLabel" = "Runter";
+"DownItemPalette" = "Anzeige runter";
+"DownItemTooltip" = "Untere Anzeige verkleinern";
+"SearchItemLabel" = "Suche";
+"SearchItemPalette" = "Suche";
+"SearchItemTooltip" = "Suche nach Items oder Werten";
+
+// Preferences Toolbar
+"GeneralPrefsItemLabel" = "General";
+"GeneralPrefsItemPalette" = "General";
+"GeneralPrefsItemTooltip" = "General";
+"BackupPrefsItemLabel" = "Backup";
+"BackupPrefsItemPalette" = "Backup";
+"BackupPrefsItemTooltip" = "Backup";
+"FormatPrefsItemLabel" = "Format";
+"FormatPrefsItemPalette" = "Format";
+"FormatPrefsItemTooltip" = "Format";
+"ImExportPrefsItemLabel" = "ImExport";
+"ImExportPrefsItemPalette" = "ImExport";
+"ImExportPrefsItemTooltip" = "ImExport";
+"ExternalsPrefsItemLabel" = "Externals";
+"ExternalsPrefsItemPalette" = "Externals";
+"ExternalsPrefsItemTooltip" = "Externals";
+"PrivacyPrefsItemLabel" = "Privacy";
+"PrivacyPrefsItemPalette" = "Privacy";
+"PrivacyPrefsItemTooltip" = "Privacy";
+
+// defaults for creating new items or itemvalues
+"NewStdItem" = "Neues Item";
+"NewItemValue" = "Neuer Wert";
+
+// item stuff
+"StdItemName" = "Item";
+"TableItemName" = "Tabellen-Item";
+"RootContactItemName" = "Kontakte";
+"ContactItemName" = "Kontakt";
+"RootTemplateItemName" = "Vorlagen";
+"TemplateItemName" = "Vorlage";
+"TrashcanItemName" = "Mülleimer";
+"ItemRefName" = "Item Verknüpfung";
+
+// itemvalue stuff
+"ItemValueName" = "Wert";
+"STextItemValueName" = "Text";
+"ETextItemValueName" = "RTF";
+"NumberItemValueName" = "Nummer";
+"CurrencyItemValueName" = "Währung";
+"BoolItemValueName" = "Boolesch";
+"DateItemValueName" = "Datum";
+"URLItemValueName" = "URL";
+"FileItemValueName" = "Datei";
+"ImageItemValueName" = "Bild";
+"PDFItemValueName" = "PDF";
+"ItemValueRefName" = "Wert Verknüpfung";
+
+// tableView and outlineView stuff
+"PrefixForCombinedItemAndItemValueList" = "Item";
+"SystemPrefixForCompinedItemAndItemValueList" = "System-Item";
+
+// Formatter stuff
+"NumberDefaultFormatString" = "0.00;0.00;-0.00";
+"CurrencyDefaultFormatString" = "$ #,##0.00;$ 0.00;[Red]($ #,##0.00)";
+"DateDefaultFormatString" = "%A, %e. %B %Y %H:%M";
+
+// undo manager stuff
+"UndoAddItem" = "Item hinzufügen";
+"UndoAddItemValue" = "Wert hinzufügen";
+"UndoDelItem" = "Item löschen";
+"UndoDelItemValue" = "Wert löschen";
+"UndoChangeItemName" = "Item Name ändern";
+"UndoChangeItemComment" = "Item Kommentar ändern";
+"UndoChangeItemSortorder" = "Item verschieben";
+"UndoChangeItemValueName" = "Wert Name ändern";
+"UndoChangeItemValueComment" = "Wert Kommentar ändern";
+"UndoChangeItemValueValue" = "Wert ändern";
+"UndoChangeItemValueSortorder" = "Wert Sortierreihenfolge ändern";
+"UndoChangeValueData" = "Wert ändern";
+"UndoChangeValueFormatterString" = "Wert Format ändern";
+"UndoChangeValueUseGlobalFormat" = "Wert Format Einstellung ändern";
+"UndoChangeValueType" = "Wert Typ ändern";
+
+// confirmations
+"TrashcanDeleteTitle" = "Mülleimer leeren...";
+"TrashcanDeleteConfirm" = "Wollen Sie wirklich den Mülleimer leeren? Die Daten sind für immer gelöscht!";
+"ReduceETextValueTypeTitle" = "Ändern des Text Typs";
+"ReduceETextValueTypeConfirm" = "Wollen Sie wirklich den Text Typ ändern? Dies kann zu Verlust von Informationen führen!";
+"UnsavedTextDataTitle" = "Ungespeicherter Text";
+"UnsavedTextDataMsg" = "Ihr Text wurde noch nicht gespeichert, wollen Sie dies jetzt tun?";
+"SwitchToAutoLoadTitle" = "Aktivierung der automatischen lade Funktion";
+"SwitchToAutoLoadConfirm" = "Der Text wurde geändert, wollen Sie den Text den behalten?";
+"OverwriteDataTitle" = "Überschreiben von Daten";
+"OverwriteDataConfirm" = "Sie haben Daten geändert, wollen Sie diese Speichern oder die alten überschreiben?";
+
+// date format explanations
+"%a" = "Wochennamen Abkürzung";
+"%A" = "Voller Wochenname";
+"%b" = "Monatsnamen Abkürzung";
+"%B" = "Voller Monatsname";
+"%c" = "Abkürzung für %X %x, Lokalisierungsformat für Datum und Zeit";
+"%d" = "Tag des Monats als Dezimalnummer";
+"%e" = "Wie %d aber verzichtet auf führende 0";
+"%F" = "Millisekunden als Dezimalnummer (000-999)";
+"%H" = "24 Stunden als Dezimalnummer (00-23)";
+"%I" = "12 Stunden als Dezimalnummer (01-12)";
+"%j" = "Tag des Jahres als Dezimalnummer (001-366)";
+"%m" = "Monat als Dezimalnummer (01-12)";
+"%M" = "Minute als Dezimalnummer (00-59)";
+"%p" = "AM/PM";
+"%S" = "Sekunden als Dezimalnummer (00-59)";
+"%w" = "Wochentag als Dezimalnummer (0-6), Sonntag = 0";
+"%x" = "Datum Format der aktuellen Lokalen-Einstellungen";
+"%X" = "Zeit Format der aktuellen Lokalen-Einstellungen";
+"%y" = "Jahr ohne Jahrhundert (00-99)";
+"%Y" = "Jahr mit Jahrhundert (z.B. 1990)";
+"%Z" = "Zeitzonen Name (z.B. Pacific Daylight Time)";
+"%z" = "Zeitzonen Abweichung von GMT in Stunden und Minuten (HHMM)";

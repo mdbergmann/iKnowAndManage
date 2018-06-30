@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4B215CCB-9B1B-4EB8-B86E-91E1B8E4A0F7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iKnowAndManage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8AB9C6D96F1BC8BFBC6339C3234CD42B5214324</key>
+		<string>https://github.com/mdbergmann/iKnowAndManage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iKnowAndManage.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8AB9C6D96F1BC8BFBC6339C3234CD42B5214324</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mdbergmann/iKnowAndManage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8AB9C6D96F1BC8BFBC6339C3234CD42B5214324</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8AB9C6D96F1BC8BFBC6339C3234CD42B5214324</string>
+			<key>IDESourceControlWCCName</key>
+			<string>trunk</string>
+		</dict>
+	</array>
+</dict>
+</plist>

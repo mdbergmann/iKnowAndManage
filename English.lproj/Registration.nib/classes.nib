@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancelButton = id; 
+                nameInput = id; 
+                registerButton = id; 
+                serNumInput = id; 
+                tryButton = id; 
+            }; 
+            CLASS = MBRegistrationController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                imageView = NSImageView; 
+                infoLabel = NSTextField; 
+                nameTextField = NSTextField; 
+                regNameLabel = NSTextField; 
+                registerButton = NSButton; 
+                sernumTextField = NSTextField; 
+                tryButton = NSButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

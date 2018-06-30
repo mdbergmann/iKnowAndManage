@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>CLASS</key>
+			<string>NSView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSResponder</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>cancelButton</key>
+				<string>id</string>
+				<key>nameInput</key>
+				<string>id</string>
+				<key>registerButton</key>
+				<string>id</string>
+				<key>serNumInput</key>
+				<string>id</string>
+				<key>tryButton</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>MBRegistrationController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>cancelButton</key>
+				<string>NSButton</string>
+				<key>imageView</key>
+				<string>NSImageView</string>
+				<key>infoLabel</key>
+				<string>NSTextField</string>
+				<key>nameTextField</key>
+				<string>NSTextField</string>
+				<key>regNameLabel</key>
+				<string>NSTextField</string>
+				<key>registerButton</key>
+				<string>NSButton</string>
+				<key>sernumTextField</key>
+				<string>NSTextField</string>
+				<key>tryButton</key>
+				<string>NSButton</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSWindowController</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>

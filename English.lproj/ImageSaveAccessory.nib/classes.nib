@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {imageFileTypeSelected = id; }; 
+            CLASS = MBImageConverter; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {accessoryView = NSView; imageTypePopUpButton = NSPopUpButton; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

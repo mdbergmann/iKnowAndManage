@@ -1,0 +1,26 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                cancelButtonPressed = id; 
+                okButtonPressed = id; 
+                passwordInput = id; 
+                repeatInput = id; 
+            }; 
+            CLASS = MBPasswordInputController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                doubleInputWindow = NSWindow; 
+                okButtonDouble = NSButton; 
+                okButtonSingle = NSButton; 
+                passwordField = NSSecureTextField; 
+                passwordSField = NSSecureTextField; 
+                repeatSField = NSSecureTextField; 
+                singleInputWindow = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,8 @@
+﻿/* Localized versions of Info.plist keys */
+
+CFBundleName = "iKnow & Manage";
+NSHumanReadableCopyright = "© Manfred Bergmann, 2007";
+/*
+CFBundleHelpBookFolder = "iKnowAndManage_En_Help";
+CFBundleHelpBookName = "iKnowAndManage_Help";
+*/

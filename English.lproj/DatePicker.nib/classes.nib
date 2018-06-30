@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                "acc_DayInput" = id; 
+                "acc_DayStepperChange" = id; 
+                "acc_MonthInput" = id; 
+                "acc_MonthStepperChange" = id; 
+                "acc_TimeInput" = id; 
+                "acc_YearInput" = id; 
+                "acc_YearStepperChange" = id; 
+                cancelButton = id; 
+                okButton = id; 
+                todayButton = id; 
+            }; 
+            CLASS = MBDatePickerController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                datePickerViewBox = NSBox; 
+                dayStepper = NSStepper; 
+                dayTextField = NSTextField; 
+                mbDatePickerView = NSView; 
+                monthStepper = NSStepper; 
+                monthTextField = NSTextField; 
+                okButton = NSButton; 
+                timeTextField = NSTextField; 
+                todayButton = NSButton; 
+                yearStepper = NSStepper; 
+                yearTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = NSDatePicker; LANGUAGE = ObjC; SUPERCLASS = NSControl; }
+    ); 
+    IBVersion = 1; 
+}

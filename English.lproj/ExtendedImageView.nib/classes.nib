@@ -1,0 +1,36 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                displayPropertyChange = id; 
+                origSize = id; 
+                rotate = id; 
+                saveAs = id; 
+                zoomNumberInput = id; 
+                zoomSliderChange = id; 
+            }; 
+            CLASS = MBExtendedImageViewController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                delegate = id; 
+                extendedImageView = NSView; 
+                imageView = MBTransformImageView; 
+                saveAsButton = NSButton; 
+                scalePropPopUpButton = NSPopUpButton; 
+                zoomNumberInputTextField = NSTextField; 
+                zoomSlider = NSSlider; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = MBSlider; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSSlider; 
+        }, 
+        {CLASS = MBTransformImageView; LANGUAGE = ObjC; SUPERCLASS = NSImageView; }, 
+        {CLASS = NSView; LANGUAGE = ObjC; SUPERCLASS = NSResponder; }
+    ); 
+    IBVersion = 1; 
+}

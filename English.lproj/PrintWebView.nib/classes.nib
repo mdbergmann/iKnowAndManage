@@ -1,0 +1,18 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {cancelButton = id; printButton = id; }; 
+            CLASS = MBPrintController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancel = NSButton; 
+                htmlListCreator = id; 
+                print = NSButton; 
+                webView = WebView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>iKnow &amp; Manage</title>
+      <link>http://www.software-by-mabe.com/download/ikam_appcast.xml</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+         <item>
+            <title>Version 1.3.0</title>
+						<sparkle:releaseNotesLink>
+							http://www.software-by-mabe.com/download/ikam_changelog.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Sat, 08 Aug 2009 19:20:11 +0000</pubDate>
+            <enclosure url="http://www.software-by-mabe.com/download/iKnowAndManage-1.3.0.app.zip" sparkle:version="1.3.0" length="3837312" type="application/octet-stream" sparkle:dsaSignature="MCwCFFIlqogt+PgRS1a0iNvtm2kZabeoAhQZZkE+XJMtqL9c75geWOB55X5ysw==" />
+         </item>
+   </channel>
+</rss>

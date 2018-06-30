@@ -1,0 +1,19 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {dismissButton = id; showButton = id; snoozeButton = id; }; 
+            CLASS = MBAlarmController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alarmWindow = NSWindow; 
+                alarmsTableView = NSTableView; 
+                dismissButton = NSButton; 
+                showButton = NSButton; 
+                snoozeButton = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
