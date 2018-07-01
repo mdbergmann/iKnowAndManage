@@ -20,7 +20,6 @@
 #import "MBExporter.h"
 #import "MBHTMLGenerator.h"
 #import "MBPrivacyPrefsViewController.h"
-#import "MBRegistrationController.h"
 #import "MBDBAccess.h"
 #import "MBDBSqlite.h"
 #import "MBElementBaseController.h"
@@ -55,7 +54,6 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 - (int)initDBTables:(id)dbConnection;
 - (int)checkAppKitVersion;
 - (int)checkDBVersion;
-- (int)checkRegistration;
 - (int)checkForDbBackup;
 - (void)doThreadedBackup;
 
@@ -167,20 +165,16 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		NSLog(@"app version = %@",appVersion);
 		
 		// check, if they match
-		if([dbVersion isEqualToString:appVersion] == YES) {
+		if([dbVersion isEqualToString:appVersion]) {
 			CocoLog(LEVEL_INFO,@"versions match!");
 		} else {
-			// TODO --- checkfor updates to be done on db
+			// TODO --- check for updates to be done on db
 		}
 	} else {
 		CocoLog(LEVEL_ERR,@"-checkDBVersion: got a nil version string object from db, cannot check versions!");
 		return UNABLE_TO_CHECK_DB_VERSION;
 	}
 	
-	return INIT_SUCCESS;
-}
-
-- (int)checkRegistration {
 	return INIT_SUCCESS;
 }
 
@@ -281,11 +275,6 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 	
 	// default encryption password
 	[defaultsDict setObject:@"" forKey:MBDefaultsDefaultEncryptionPasswordKey];
-	
-	// registration info defaults
-	[defaultsDict setObject:[MBRegistrationController generateAppModeDataForMode:DemoAppMode] forKey:MBDefaultsAppModeKey];
-	[defaultsDict setObject:MBLocaleStr(@"Unregistered") forKey:MBDefaultsRegNameKey];
-	[defaultsDict setObject:@"0" forKey:MBDefaultsSerNumKey];	
 	
 	// update checks
 	[defaultsDict setObject:[NSNumber numberWithBool:YES] forKey:MBDefaultsCheckUpdateEveryStartKey];
@@ -390,8 +379,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
         
 		// check OS Version number
 		stat = [self checkAppKitVersion];
-		if(stat == UNABLE_TO_CONTINUE_WITH_OS_VERSION)
-		{
+		if(stat == UNABLE_TO_CONTINUE_WITH_OS_VERSION) {
 			[app terminate:nil];
 		}
 	
@@ -402,7 +390,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		// check, if this exist
 		NSFileManager *fm = [NSFileManager defaultManager];
 		BOOL exists = [fm fileExistsAtPath:dbPath];
-		if(exists == NO) {
+		if(!exists) {
 			// then create default
 			// check for Application Support Folder and get path to app database in Application Support
 			stat = [self initAppSupportFolder:&pathToAppDatabase];
@@ -447,7 +435,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		// check for ikam folder in tmp
 		NSString *tempF = TMPFOLDER;
 		BOOL isDir;
-		if([fm fileExistsAtPath:tempF isDirectory:&isDir] == YES) {
+		if([fm fileExistsAtPath:tempF isDirectory:&isDir]) {
 			// delete this dir and create it new, normally it should be deleted on application termination
 			BOOL success = [fm removeItemAtPath:tempF error:NULL];
 			if(success == NO) {
@@ -455,7 +443,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 			}
 		}
 		// check again
-		if([fm fileExistsAtPath:tempF isDirectory:&isDir] == NO) {
+		if(![fm fileExistsAtPath:tempF isDirectory:&isDir]) {
 			// create it
 			BOOL success = [fm createDirectoryAtPath:tempF withIntermediateDirectories:NO attributes:nil error:NULL];
 			if(success == NO) {
@@ -524,7 +512,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		// build the complete Element tree
 		// set default memory footprint
 		int val = [[userDefaults objectForKey:MBDefaultsMemoryFootprintKey] intValue];
-		int memFoot = -1;
+		int memFoot = MediumMemFootprintType;
 		switch(val) {
 			case 0:
 				memFoot = SmallMemFootprintType;
@@ -535,7 +523,9 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 			case 2:
 				memFoot = LargeMemFootprintType;
 				break;
-		}
+            default:
+                break;
+        }
         MBElementBaseController *elemBase = elementController;
         [elemBase setDocStoragePath:DEFAULT_DOC_STORE_PATH];
 		[elemBase setMemoryFootprint:memFoot];
@@ -561,7 +551,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		MBValueIndexController *indexController = [MBValueIndexController defaultController];
 		// get the AppInfoItem and make sure
 		MBAppInfoItem *appInfo = [ibc appInfoItem];
-		if([appInfo indexInitiated] == NO) {
+		if(![appInfo indexInitiated]) {
 			// run
 			[indexController runFirstInitialization];
 			// set initialized to appinfo
@@ -589,21 +579,6 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		}	
 		 */
 				
-		// prepare registration controller
-		regController = [MBRegistrationController sharedRegistration];
-		// check mode
-		if([regController appMode] != RegisteredAppMode) {
-			// run reg window modal
-			int ret = [regController runModal:YES];
-			if(ret == RegCancel) {
-				// the user has choosen to terminate
-				[app terminate:nil];				
-			}
-			
-			// alter window title
-			[[NSApp mainWindow] setTitle:[NSString stringWithFormat:@"%@ - unregistered",[[NSApp mainWindow] title]]];
-		}
-
 		// init Alarm checker
 		[MBAlarmController defaultController];        
 	}
@@ -657,16 +632,6 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 }
 
 //-------------------------------------------------------------------
-// show Registration Window
-//-------------------------------------------------------------------
-- (IBAction)showRegWindow:(id)sender {
-	// get shared reg controller
-	regController = [MBRegistrationController sharedRegistration];
-	// show window
-	[regController runModal:NO];
-}
-
-//-------------------------------------------------------------------
 // show AboutWindow
 //-------------------------------------------------------------------
 - (IBAction)showAboutWindow:(id)sender {
@@ -684,7 +649,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 //--------------------------------------------------------------------
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	// check for keyPath
-	if([keyPath isEqualToString:MBDefaultsCheckUpdateEveryStartKey] == YES) {
+	if([keyPath isEqualToString:MBDefaultsCheckUpdateEveryStartKey]) {
          // get new value
          id newValue = [change valueForKey:NSKeyValueChangeNewKey];
          if(newValue != nil) {
@@ -704,7 +669,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 		// load FormatSetterNib, so we have the views we need
 		MBThreadedProgressSheetController *pc = [MBThreadedProgressSheetController standardProgressSheetController];
 		BOOL success = [NSBundle loadNibNamed:THREADED_PROGRESS_SHEET_NIB_NAME owner:pc];
-		if(success == YES) {
+		if(success) {
 			[pc setIsThreaded:[NSNumber numberWithBool:YES]];
 		} else {
 			CocoLog(LEVEL_ERR,@"cannot load ThreadedProgressSheetControllerNib!");
@@ -753,7 +718,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 	// get db connection and save before kicking up
 	MBDBAccess *dbCon = [MBDBSqlite sharedConnection];
 	if(dbCon != nil) {
-		if([dbCon isConnected] == YES) {
+		if([dbCon isConnected]) {
 			// send BEGIN transaction command to speed things up
 			// TODO --- activate for speed improvements
 			//[dbCon sendCommitTransaction];	
@@ -766,7 +731,7 @@ NSString* pathForFolderType(OSType dir,short domain,BOOL createFolder) {
 	// check for ikam folder in tmp
 	NSString *tempF = TMPFOLDER;
 	BOOL isDir;
-	if([fm fileExistsAtPath:tempF isDirectory:&isDir] == YES) {
+	if([fm fileExistsAtPath:tempF isDirectory:&isDir]) {
 		// delete this dir and create it new, normally it should be deleted on application termination
 		BOOL success = [fm removeItemAtPath:tempF error:NULL];
 		if(success == NO) {

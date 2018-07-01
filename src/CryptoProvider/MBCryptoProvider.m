@@ -72,17 +72,18 @@
     NSMutableData *dataOut = [NSMutableData dataWithLength:inputData.length + kCCBlockSizeBlowfish];
     size_t encryptedBytes = 0;
     
-    CCCryptorStatus ccStatus = CCCrypt(operation,
-                                       kCCAlgorithmBlowfish,
-                                       0,
-                                       keyData.bytes,
-                                       keyData.length,
-                                       ivec,
-                                       inputData.bytes,
-                                       inputData.length,
-                                       dataOut.mutableBytes,
-                                       dataOut.length,
-                                       &encryptedBytes);
+    CCCryptorStatus ccStatus = CCCrypt(
+            operation,
+            kCCAlgorithmBlowfish,
+            kCCOptionPKCS7Padding | kCCOptionECBMode,
+            keyData.bytes,
+            keyData.length,
+            ivec,
+            inputData.bytes,
+            inputData.length,
+            dataOut.mutableBytes,
+            dataOut.length,
+            &encryptedBytes);
     
     if(ccStatus == kCCSuccess) {
         dataOut.length = encryptedBytes;

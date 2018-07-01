@@ -71,8 +71,6 @@
 		500CC4FA08EB505C00925CC9 /* MBFileItemValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 500CC4F808EB505C00925CC9 /* MBFileItemValue.m */; };
 		500DBE7108F3518E00950A9D /* MBExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 500DBE6F08F3518E00950A9D /* MBExporter.h */; };
 		500DBE7208F3518E00950A9D /* MBExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DBE7008F3518E00950A9D /* MBExporter.m */; };
-		500E205D093EA95400A50C4D /* MBRegistrationResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 500E205B093EA95400A50C4D /* MBRegistrationResource.h */; };
-		500E205E093EA95400A50C4D /* MBRegistrationResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 500E205C093EA95400A50C4D /* MBRegistrationResource.m */; };
 		500E446E08BC3A7300E331FE /* MBDBSqliteElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 500E446808BC3A7300E331FE /* MBDBSqliteElement.h */; };
 		500E446F08BC3A7300E331FE /* MBDBSqliteElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 500E446908BC3A7300E331FE /* MBDBSqliteElement.m */; };
 		500E44BA08BC5EA700E331FE /* MBElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 500E44B008BC5EA700E331FE /* MBElement.h */; };
@@ -113,8 +111,6 @@
 		501CC84B093E56D200102C1D /* MBPasswordInputController.h in Headers */ = {isa = PBXBuildFile; fileRef = 501CC849093E56D200102C1D /* MBPasswordInputController.h */; };
 		501CC84C093E56D200102C1D /* MBPasswordInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CC84A093E56D200102C1D /* MBPasswordInputController.m */; };
 		501CC8BB093E601C00102C1D /* Registration.nib in Resources */ = {isa = PBXBuildFile; fileRef = 501CC8B5093E601C00102C1D /* Registration.nib */; };
-		501CC8C2093E63AC00102C1D /* MBRegistrationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 501CC8C0093E63AB00102C1D /* MBRegistrationController.h */; };
-		501CC8C3093E63AC00102C1D /* MBRegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501CC8C1093E63AB00102C1D /* MBRegistrationController.m */; };
 		501FD95809368FEA009F42C5 /* MBDatabasePrefsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 501FD95609368FEA009F42C5 /* MBDatabasePrefsViewController.h */; };
 		501FD95909368FEA009F42C5 /* MBDatabasePrefsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501FD95709368FEA009F42C5 /* MBDatabasePrefsViewController.m */; };
 		502351DC08C45F4400898ECF /* MBStdItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 502351DA08C45F4400898ECF /* MBStdItem.h */; };
@@ -459,8 +455,6 @@
 		500CC4F808EB505C00925CC9 /* MBFileItemValue.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBFileItemValue.m; path = src/ItemBase/MBFileItemValue.m; sourceTree = "<group>"; };
 		500DBE6F08F3518E00950A9D /* MBExporter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBExporter.h; path = src/ImExporter/MBExporter.h; sourceTree = "<group>"; };
 		500DBE7008F3518E00950A9D /* MBExporter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBExporter.m; path = src/ImExporter/MBExporter.m; sourceTree = "<group>"; };
-		500E205B093EA95400A50C4D /* MBRegistrationResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBRegistrationResource.h; path = src/Registration/MBRegistrationResource.h; sourceTree = "<group>"; };
-		500E205C093EA95400A50C4D /* MBRegistrationResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBRegistrationResource.m; path = src/Registration/MBRegistrationResource.m; sourceTree = "<group>"; };
 		500E446808BC3A7300E331FE /* MBDBSqliteElement.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBDBSqliteElement.h; path = src/DynamicDatabase/DBSqliteElementBase/MBDBSqliteElement.h; sourceTree = "<group>"; };
 		500E446908BC3A7300E331FE /* MBDBSqliteElement.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBDBSqliteElement.m; path = src/DynamicDatabase/DBSqliteElementBase/MBDBSqliteElement.m; sourceTree = "<group>"; };
 		500E44B008BC5EA700E331FE /* MBElement.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBElement.h; path = src/DynamicDatabase/ElementBase/MBElement.h; sourceTree = "<group>"; };
@@ -504,8 +498,6 @@
 		501CC849093E56D200102C1D /* MBPasswordInputController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBPasswordInputController.h; path = src/PasswordInput/MBPasswordInputController.h; sourceTree = "<group>"; };
 		501CC84A093E56D200102C1D /* MBPasswordInputController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBPasswordInputController.m; path = src/PasswordInput/MBPasswordInputController.m; sourceTree = "<group>"; };
 		501CC8B6093E601C00102C1D /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Registration.nib; sourceTree = "<group>"; };
-		501CC8C0093E63AB00102C1D /* MBRegistrationController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBRegistrationController.h; path = src/Registration/MBRegistrationController.h; sourceTree = "<group>"; };
-		501CC8C1093E63AB00102C1D /* MBRegistrationController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBRegistrationController.m; path = src/Registration/MBRegistrationController.m; sourceTree = "<group>"; };
 		501FD95609368FEA009F42C5 /* MBDatabasePrefsViewController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBDatabasePrefsViewController.h; path = src/Preferences/MBDatabasePrefsViewController.h; sourceTree = "<group>"; };
 		501FD95709368FEA009F42C5 /* MBDatabasePrefsViewController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBDatabasePrefsViewController.m; path = src/Preferences/MBDatabasePrefsViewController.m; sourceTree = "<group>"; };
 		502351DA08C45F4400898ECF /* MBStdItem.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBStdItem.h; path = src/ItemBase/MBStdItem.h; sourceTree = "<group>"; };
@@ -1205,10 +1197,6 @@
 		501CC8BF093E637E00102C1D /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				501CC8C0093E63AB00102C1D /* MBRegistrationController.h */,
-				501CC8C1093E63AB00102C1D /* MBRegistrationController.m */,
-				500E205B093EA95400A50C4D /* MBRegistrationResource.h */,
-				500E205C093EA95400A50C4D /* MBRegistrationResource.m */,
 			);
 			name = Registration;
 			sourceTree = "<group>";
@@ -1630,8 +1618,6 @@
 				501A60D2093BAB250020024B /* AMToolTipTableView.h in Headers */,
 				501A623F093BC3A70020024B /* MBItemPrintView.h in Headers */,
 				501CC84B093E56D200102C1D /* MBPasswordInputController.h in Headers */,
-				501CC8C2093E63AC00102C1D /* MBRegistrationController.h in Headers */,
-				500E205D093EA95400A50C4D /* MBRegistrationResource.h in Headers */,
 				502A36E2094962C400F5CC09 /* MBPrintController.h in Headers */,
 				506FC290094D7D8E007F10AA /* MBRefItem.h in Headers */,
 				5048F3230962198000F26493 /* MBHTMLGenerator.h in Headers */,
@@ -1740,7 +1726,6 @@
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = 27XS5W9C3J;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 8D1107260486CEB800E47090;
 					};
 				};
 			};
@@ -1986,8 +1971,6 @@
 				501FD95909368FEA009F42C5 /* MBDatabasePrefsViewController.m in Sources */,
 				501A60D3093BAB250020024B /* AMToolTipTableView.m in Sources */,
 				501CC84C093E56D200102C1D /* MBPasswordInputController.m in Sources */,
-				501CC8C3093E63AC00102C1D /* MBRegistrationController.m in Sources */,
-				500E205E093EA95400A50C4D /* MBRegistrationResource.m in Sources */,
 				502A36E3094962C400F5CC09 /* MBPrintController.m in Sources */,
 				506FC291094D7D8E007F10AA /* MBRefItem.m in Sources */,
 				5048F3240962198000F26493 /* MBHTMLGenerator.m in Sources */,
@@ -2304,7 +2287,7 @@
 				PRODUCT_NAME = "iKnow & Manage";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "x86_64 i386";
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
@@ -2345,7 +2328,7 @@
 				PRODUCT_NAME = "iKnow & Manage";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "x86_64 i386";
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
@@ -2380,7 +2363,7 @@
 				PRODUCT_NAME = "iKnow & Manage";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "x86_64 i386";
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
@@ -2568,7 +2551,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = "";
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2664,7 +2647,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2715,6 +2697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src/**";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -2722,8 +2705,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = de.mabe.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKnow & Manage.app/Contents/MacOS/iKnow & Manage";
 				VALID_ARCHS = x86_64;
 			};
 			name = Development;
@@ -2732,7 +2715,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2777,14 +2759,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src/**";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.mabe.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKnow & Manage.app/Contents/MacOS/iKnow & Manage";
 				VALID_ARCHS = x86_64;
 			};
 			name = Deployment;
@@ -2793,7 +2776,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2838,14 +2820,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src/**";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = de.mabe.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iKnow & Manage.app/Contents/MacOS/iKnow & Manage";
 				VALID_ARCHS = x86_64;
 			};
 			name = Default;

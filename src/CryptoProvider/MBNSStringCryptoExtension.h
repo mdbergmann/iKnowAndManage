@@ -13,7 +13,7 @@
 // $Rev$
 
 #import <Foundation/Foundation.h>
-#import <MBCryptoProvider.h>
+#import "MBCryptoProvider.h"
 
 /**
  \brief this class is a category which extends NSString in that is is able to deal with hash, encryption and decryption

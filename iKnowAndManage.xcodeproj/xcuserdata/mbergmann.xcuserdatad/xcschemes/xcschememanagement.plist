@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Doxygen.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>ElementBaseTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>HTTPServer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Testcases.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>iKnowAndManage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>-[EnDecrypt].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>-[EnDecrypt testLowLevelEnDecryption].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>50C5B8D7087513300068E8B4</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>8D1107260486CEB800E47090</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>A97AB034103B55A3009EB5BD</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>A9AD64280CA2D21C000D8AD1</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>A9E898F81036E8D200A1E2DA</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+	</dict>
+</dict>
+</plist>

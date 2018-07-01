@@ -11,7 +11,6 @@
 @class MBInterfaceController;
 @class MBPreferenceController;
 @class MBAboutWindowController;
-@class MBRegistrationController;
 
 enum MBFileAccessErrorCodes
 {
@@ -37,8 +36,6 @@ enum MBFileAccessErrorCodes
 	MBPreferenceController *preferenceController;
 	// our about controller
 	MBAboutWindowController *aboutWindowController;
-	// out registration controller
-	MBRegistrationController *regController;    
 }
 
 // NSApplication delegate methods

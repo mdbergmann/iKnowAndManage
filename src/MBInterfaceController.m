@@ -13,7 +13,6 @@
 #import "GlobalWindows.h"
 #import "MBThreadedProgressSheetController.h"
 #import "MBGeneralPrefsViewController.h"
-#import "MBRegistrationController.h"
 #import "MBMainViewController.h"
 #import "MBToolbarController.h"
 #import "MBInfoViewController.h"
@@ -145,7 +144,7 @@
 }
 
 /**
- \brief with implementing this method, the undomanager for the window is provided by ItemBaseController
+ \brief with implementing this method, the undo manager for the window is provided by ItemBaseController
 */
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
 	CocoLog(LEVEL_DEBUG,@"");
@@ -236,12 +235,6 @@
         [mainWindow _setTexturedBackground:useMetal];	
         // reset the toolbar to visible
         [[mainWindow toolbar] setVisible:YES];			
-    }
-    
-    // check mode
-    if([[MBRegistrationController sharedRegistration] appMode] != RegisteredAppMode) {
-        // alter window title
-        [mainWindow setTitle:[NSString stringWithFormat:@"%@ - %@",[mainWindow title], MBLocaleStr(@"Unregistered")]];
     }
 }
 
@@ -1605,21 +1598,6 @@ and information of the selected ItemValue is shown.
 - (IBAction)menuEncryptWithDefaultPassword:(id)sender {
 	CocoLog(LEVEL_DEBUG,@"[MBInterfaceController -menuEncryptWithDefaultPassword:]");
 	
-	// if we are in DEMO mode, do not allow this
-	MBRegistrationController *regController = [MBRegistrationController sharedRegistration];
-	if([regController appMode] == DemoAppMode) {
-		NSAlert *alert = [NSAlert alertWithMessageText:MBLocaleStr(@"FeatureDeactivatedInDemoTitle") 
-										 defaultButton:MBLocaleStr(@"OK") 
-									   alternateButton:nil 
-										   otherButton:nil 
-							 informativeTextWithFormat:MBLocaleStr(@"FeatureDeactivatedInDemoMsg")];
-		[alert beginSheetModalForWindow:[GlobalWindows mainAppWindow] 
-						  modalDelegate:nil 
-						 didEndSelector:nil 
-							contextInfo:nil];
-		return;
-	}
-
 	NSArray *itemvals = [itemController currentItemValueSelection];
 	// we only can decrypt or encrypt one itemvalue at a time
 	if([itemvals count] > 1) {
@@ -1670,24 +1648,6 @@ and information of the selected ItemValue is shown.
 {
 	CocoLog(LEVEL_DEBUG,@"[MBInterfaceController -menuEncryptWithCustumPassword:]");
 
-#ifndef BETAVERSION 
-	// if we are in DEMO mode, do not allow this
-	MBRegistrationController *regController = [MBRegistrationController sharedRegistration];
-	if([regController appMode] == DemoAppMode)
-	{
-		NSAlert *alert = [NSAlert alertWithMessageText:MBLocaleStr(@"FeatureDeactivatedInDemoTitle") 
-										 defaultButton:MBLocaleStr(@"OK") 
-									   alternateButton:nil 
-										   otherButton:nil 
-							 informativeTextWithFormat:MBLocaleStr(@"FeatureDeactivatedInDemoMsg")];
-		[alert beginSheetModalForWindow:[GlobalWindows mainAppWindow] 
-						  modalDelegate:nil 
-						 didEndSelector:nil 
-							contextInfo:nil];
-		return;
-	}
-#endif
-	
 	NSArray *itemvals = [itemController currentItemValueSelection];
 	// we only can decrypt or encrypt one itemvalue at a time
 	if([itemvals count] > 1)
@@ -1740,20 +1700,6 @@ and information of the selected ItemValue is shown.
 - (IBAction)menuDecrypt:(id)sender
 {
 	CocoLog(LEVEL_DEBUG,@"[MBInterfaceController -menuDecrypt:]");
-
-	MBRegistrationController *regController = [MBRegistrationController sharedRegistration];
-	if([regController appMode] == DemoAppMode) {
-		NSAlert *alert = [NSAlert alertWithMessageText:MBLocaleStr(@"FeatureDeactivatedInDemoTitle") 
-										 defaultButton:MBLocaleStr(@"OK") 
-									   alternateButton:nil 
-										   otherButton:nil 
-							 informativeTextWithFormat:MBLocaleStr(@"FeatureDeactivatedInDemoMsg")];
-		[alert beginSheetModalForWindow:[GlobalWindows mainAppWindow] 
-						  modalDelegate:nil 
-						 didEndSelector:nil 
-							contextInfo:nil];
-		return;
-	}
 
 	NSArray *itemvals = [itemController currentItemValueSelection];
 	// we only can decrypt or encrypt one itemvalue at a time
