@@ -25,7 +25,7 @@
 + (NSString *)doSHA1HashOfData:(NSData *)inputData {
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     
-    CC_SHA1(inputData.bytes, inputData.length, digest);
+    CC_SHA1(inputData.bytes, (CC_LONG) inputData.length, digest);
     
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     

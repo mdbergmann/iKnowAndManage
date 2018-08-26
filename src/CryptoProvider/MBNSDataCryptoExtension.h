@@ -38,7 +38,7 @@
 /**
  \brief this method returns a SHA1 hashed NSData instance
 */
-- (NSData *)sha1Hash;
+- (NSString *)sha1Hash;
 
     /**
     \brief generates a sh1 hash and converts it to hex string

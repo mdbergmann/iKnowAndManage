@@ -644,7 +644,7 @@
 		50FDE34808F9D20A0099451B /* CombinedImageTextCell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = CombinedImageTextCell.m; path = src/CombinedImageTextCell/CombinedImageTextCell.m; sourceTree = "<group>"; };
 		50FECAF309CA18EF008A67BF /* MBSearchOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MBSearchOutlineView.h; path = src/MBSearchOutlineView.h; sourceTree = "<group>"; };
 		50FECAF409CA18EF008A67BF /* MBSearchOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MBSearchOutlineView.m; path = src/MBSearchOutlineView.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* iKnowAndManage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iKnowAndManage.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* iKnow & Manage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iKnow & Manage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92B335E102AC51B0081AFF6 /* SplitViewVertDividerBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = SplitViewVertDividerBar.tiff; path = resources/SplitViewVertDividerBar.tiff; sourceTree = "<group>"; };
 		A92B335F102AC51B0081AFF6 /* SplitViewDividerDimple.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = SplitViewDividerDimple.tiff; path = resources/SplitViewDividerDimple.tiff; sourceTree = "<group>"; };
@@ -899,7 +899,7 @@
 				5019E753088E019600726E96 /* OtherIcons */,
 				504BB4450867B24A00B04721 /* ToolbarIcons */,
 				506DF8C60862663D00A7AFCD /* Localizable.strings */,
-				8D1107310486CEB800E47090 /* iKnowAndManage.plist */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				A92F482F103D50C700B6BA86 /* Preferences.nib */,
@@ -2276,8 +2276,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = iKnowAndManage.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2317,8 +2318,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = iKnowAndManage.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2353,8 +2355,9 @@
 				GCC_PREFIX_HEADER = iKnowAndManage_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = iKnowAndManage.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/system";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;

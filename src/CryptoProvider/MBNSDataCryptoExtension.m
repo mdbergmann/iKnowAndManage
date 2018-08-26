@@ -21,8 +21,8 @@ void toHex(const char *inData, char *outData, NSUInteger len) {
     //char cVal = 0;
     for(int i = 0;i < len;i++)
     {
-        val = (char)inData[i];
-        val = abs(val);
+        val = inData[i];
+        val = (char) abs(val);
         sprintf(&outData[i*2], "%02X", val);
         //outData[i] = cVal;
         if(i == (len - 1))
@@ -65,7 +65,7 @@ void toHex(const char *inData, char *outData, NSUInteger len) {
 /**
 \brief this method returns a SHA1 hashed NSData instance
  */
-- (NSData *)sha1Hash {
+- (NSString *)sha1Hash {
 	return [MBCryptoProvider doSHA1HashOfData:self];
 }
 
@@ -75,11 +75,11 @@ void toHex(const char *inData, char *outData, NSUInteger len) {
 - (NSString *)sha1HashAsHexString {
     NSString *ret = nil;
     
-    NSData *data = [self sha1Hash];
-    
-    NSUInteger len = [data length];
+    NSString *sha1String = [self sha1Hash];
+
+    NSUInteger len = [sha1String length];
     // get bytes
-    const char *charData = (const char *)[data bytes];
+    const char *charData = [sha1String UTF8String];
     // alloc memory for the result string
     char *hexString = (char *)calloc((len * 2) + 1, 1);
     // convert
