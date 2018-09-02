@@ -35,8 +35,8 @@
 
 @interface MBSearchController (privateAPI)
 
-- (BOOL)searchItemValue:(MBItemValue *)itemval forRegexList:(NSArray *)regexes result:(NSMutableDictionary **)result;
-- (BOOL)searchItem:(MBItem *)item forRegexList:(NSArray *)regexes result:(NSMutableDictionary **)result;
+- (BOOL)searchItemValue:(MBItemValue *)itemval forRegexList:(NSArray *)regexes result:(NSMutableDictionary *)result;
+- (BOOL)searchItem:(MBItem *)item forRegexList:(NSArray *)regexes result:(NSMutableDictionary *)result;
 
 - (void)setSearchWords:(NSArray *)list;
 - (NSArray *)searchWords;
@@ -73,7 +73,7 @@ these words we are looking for
  \brief search for sString in itemval
  returns true on match
 */
-- (BOOL)searchItemValue:(MBItemValue *)itemval forRegexList:(NSArray *)regexes result:(NSMutableDictionary **)result {
+- (BOOL)searchItemValue:(MBItemValue *)itemval forRegexList:(NSArray *)regexes result:(NSMutableDictionary *)result {
 	BOOL itemvalIsRef = NO;
 	MBRefItem *itemvalRef = nil;
 	
@@ -94,11 +94,11 @@ these words we are looking for
 		
 		// if it is a reference, the target should not be nil
 		if(itemval != nil) {
-			MBSearchResult *searchResult = [*result objectForKey:[NSNumber numberWithInt:[itemval itemID]]];
+			MBSearchResult *searchResult = [result objectForKey:[NSNumber numberWithInt:[itemval itemID]]];
 			if(searchResult == nil) {
 				// we have no searchResult yet, create one
 				searchResult = [MBSearchResult searchResultWithCommonItem:itemval];
-				[*result setObject:searchResult forKey:[NSNumber numberWithInt:[itemval itemID]]];
+				[result setObject:searchResult forKey:[NSNumber numberWithInt:[itemval itemID]]];
 			}
 
 			// use this matchResult variable
@@ -447,7 +447,7 @@ these words we are looking for
  \brief search in the given item
  options are taken from this searcher instance
 */
-- (BOOL)searchItem:(MBItem *)item forRegexList:(NSArray *)regexes result:(NSMutableDictionary **)result {
+- (BOOL)searchItem:(MBItem *)item forRegexList:(NSArray *)regexes result:(NSMutableDictionary *)result {
 	BOOL ret = NO;
 	
 	BOOL itemIsRef = NO;
@@ -469,11 +469,11 @@ these words we are looking for
 		if(item != nil) {
 			// are we searching for items?
 			if(([self doSearchForItemsInDict:searchForItems withID:StdItemID]) && (NSLocationInRange([item identifier],ITEM_ID_RANGE))) {
-				MBSearchResult *searchResult = [*result objectForKey:[NSNumber numberWithInt:[item itemID]]];
+				MBSearchResult *searchResult = [result objectForKey:[NSNumber numberWithInt:[item itemID]]];
 				if(searchResult == nil) {
 					// we no searchResult yet, create one
 					searchResult = [MBSearchResult searchResultWithCommonItem:item];
-					[*result setObject:searchResult forKey:[NSNumber numberWithInt:[item itemID]]];
+					[result setObject:searchResult forKey:[NSNumber numberWithInt:[item itemID]]];
 				}
 				
 				MatchResult *mResult = nil;
@@ -522,7 +522,7 @@ these words we are looking for
 		}
 		
 		// do we have results
-		if([*result count] > 0) {
+		if([result count] > 0) {
 			ret = YES;
 		}
 	} else {
@@ -696,7 +696,7 @@ these words we are looking for
  \brief this is just a wrapper for the same method with more attributes
  we take the one from the instance
 */
-- (long)searchInCommonItemArray:(NSArray *)list forString:(NSString *)sString result:(NSMutableDictionary **)result
+- (long)searchInCommonItemArray:(NSArray *)list forString:(NSString *)sString result:(NSMutableDictionary *)result
 {
 	struct timeval starttime;
 	struct timeval stoptime;
@@ -704,12 +704,6 @@ these words we are looking for
 		
 	// start timetake
 	gettimeofday(&starttime,nil);
-	
-	// if output dictionary is nil, create one
-	if(*result == nil)
-	{
-		*result = [NSMutableDictionary dictionary];
-	}
 	
 	// set SearchWords
 	[self setSearchWordsFromSearchString:sString];
@@ -760,14 +754,14 @@ these words we are looking for
 	
 	// check AND here
 	// delete all entries with 0 matches
-	NSEnumerator *iter = [[*result allKeys] objectEnumerator];
+	NSEnumerator *iter = [[result allKeys] objectEnumerator];
 	NSNumber *key = nil;
 	while((key = [iter nextObject]))
 	{
-		MBSearchResult *sr = [*result objectForKey:key];
+		MBSearchResult *sr = [result objectForKey:key];
 		if([sr numberOfMatchResults] == 0)
 		{
-			[*result removeObjectForKey:key];
+			[result removeObjectForKey:key];
 		}
 	}
 	
@@ -800,7 +794,7 @@ these words we are looking for
 						 searchExternal:(BOOL)e 
 						  caseSensitive:(BOOL)c 
 						 fileDataSearch:(BOOL)f 
-								 result:(NSMutableDictionary **)result;
+								 result:(NSMutableDictionary *)result;
 {
 	// set settings
 	[self setCaseSensitiveSearch:c];
@@ -818,7 +812,7 @@ these words we are looking for
 						 forString:(NSString *)sString 
 						   doRegex:(BOOL)regex 
 					 caseSensitive:(BOOL)cs 
-							result:(NSMutableDictionary **)result
+							result:(NSMutableDictionary *)result
 							 error:(NSString **)errorMsg
 {
 	struct timeval starttime;
@@ -827,12 +821,6 @@ these words we are looking for
 	
 	// start timetake
 	gettimeofday(&starttime,nil);
-	
-	// if output dictionary is nil, create one
-	if(*result == nil)
-	{
-		*result = [NSMutableDictionary dictionary];
-	}
 	
 	// get dbCon
 	MBDBAccess *dbCon = [MBDBAccess sharedConnection];
@@ -891,12 +879,12 @@ these words we are looking for
 						{
 							// get ItemValue
 							NSNumber *elemID = [NSNumber numberWithInt:elementid];
-							MBSearchResult *sr = [*result objectForKey:elemID];
+							MBSearchResult *sr = [result objectForKey:elemID];
 							if(sr == nil)
 							{
 								sr = [MBSearchResult searchResultWithCommonItem:ci];
 								// add to result
-								[*result setObject:sr forKey:elemID];
+								[result setObject:sr forKey:elemID];
 							}
 							
 							// add match
@@ -924,11 +912,11 @@ these words we are looking for
 					if([content length] > 0)
 					{
 						// get elementid
-						int *elemID = [[[row findColumnForName:@"elementid"] value] intValue];
+						NSNumber *elemID = [NSNumber numberWithInt:[[[row findColumnForName:@"elementid"] value] intValue]];
 						
 						// get common item for id
 						// make sure, we search for this item identifier
-						MBCommonItem *ci = [itc commonItemForId:elemID];
+						MBCommonItem *ci = [itc commonItemForId:[elemID intValue]];
 						int identifier = [ci identifier];
 						
 						// check for Alarms as special case
@@ -981,12 +969,12 @@ these words we are looking for
 							if(add)
 							{
 								// get ItemValue
-								MBSearchResult *sr = [*result objectForKey:elemID];
+								MBSearchResult *sr = [result objectForKey:elemID];
 								if(sr == nil)
 								{
 									sr = [MBSearchResult searchResultWithCommonItem:ci];
 									// add to result
-									[*result setObject:sr forKey:elemID];
+									[result setObject:sr forKey:elemID];
 								}
 								
 								// add match
@@ -1002,12 +990,12 @@ these words we are looking for
 	// if we do AND search, remove all entries that do not have matches for all subjects
 	if((matchType == MBMatchAll) && (words > 1))
 	{
-		NSEnumerator *iter = [[*result allKeys] objectEnumerator];
+		NSEnumerator *iter = [[result allKeys] objectEnumerator];
 		NSNumber *key = nil;
 		while((key = [iter nextObject]))
 		{
 			// get SearchResult for key
-			MBSearchResult *sr = [*result objectForKey:key];
+			MBSearchResult *sr = [result objectForKey:key];
 			
 			BOOL remove = NO;
 			
@@ -1026,7 +1014,7 @@ these words we are looking for
 			
 			if(remove)
 			{
-				[*result removeObjectForKey:key];
+				[result removeObjectForKey:key];
 			}
 		}
 	}

@@ -78,21 +78,21 @@ typedef enum _MBMatchType {
 - (void)setSearchForItems:(NSDictionary *)searchFor;
 - (NSDictionary *)searchForItems;
 
-- (long)searchInCommonItemArray:(NSArray *)list forString:(NSString *)sString result:(NSMutableDictionary **)result;
+- (long)searchInCommonItemArray:(NSArray *)list forString:(NSString *)sString result:(NSMutableDictionary *)result;
 - (long)searchInCommonItemArray:(NSArray *)list 
 					  forString:(NSString *)sString 
 					  recursive:(BOOL)r
 				 searchExternal:(BOOL)e
 				  caseSensitive:(BOOL)c 
 				 fileDataSearch:(BOOL)f 
-						 result:(NSMutableDictionary **)result;
+						 result:(NSMutableDictionary *)result;
 
 // this is for database search
 - (long)searchDbWithinItem:(MBItem *)aItem 
 				 forString:(NSString *)sString 
 				   doRegex:(BOOL)regex 
 			 caseSensitive:(BOOL)cs 
-					result:(NSMutableDictionary **)result
+					result:(NSMutableDictionary *)result
 					 error:(NSString **)errorMsg;
 
 @end

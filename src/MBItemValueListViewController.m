@@ -126,7 +126,7 @@
 							 searchExternal:NO 
 							  caseSensitive:NO 
 							 fileDataSearch:NO 
-									 result:&valDict];
+									 result:valDict];
 				
 				NSEnumerator *iter = [[valDict allValues] objectEnumerator];
 				MBSearchResult *sr = nil;

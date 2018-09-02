@@ -138,20 +138,20 @@
 		[searchController setSearchForItems:searchForTypes];
 
 		// search
-		NSMutableDictionary *sResult = nil;
+		NSMutableDictionary *sResult = [[NSMutableDictionary alloc] init];
 //		unsigned int time = [sc searchInCommonItemArray:[NSArray arrayWithObject:[self searchInItem]] 
 //											  forString:sString 
 //											  recursive:(BOOL)[defaults integerForKey:MBDefaultsSearchRecursiveKey]
 //										 searchExternal:(BOOL)[defaults integerForKey:MBDefaultsSearchIncludeExternalKey] 
 //										  caseSensitive:(BOOL)[defaults integerForKey:MBDefaultsSearchCaseSensitiveKey] 
 //										 fileDataSearch:(BOOL)[defaults integerForKey:MBDefaultsSearchInFiledataKey] 
-//												 result:&sResult];
+//												 result:sResult];
 		NSString *error = @"";
 		long time = [searchController searchDbWithinItem:[self searchInItem] 
                                                forString:sString 
                                                  doRegex:(BOOL)[[defaults objectForKey:MBDefaultsDoRegexSearchKey] intValue]
                                            caseSensitive:(BOOL)[[defaults objectForKey:MBDefaultsSearchCaseSensitiveKey] intValue]			
-                                                  result:&sResult
+                                                  result:sResult
                                                    error:&error];
 
 		// check for error
@@ -221,7 +221,8 @@
 			NSString *resultString = [NSString stringWithFormat:@"Found %d results in %ds:%dms",[sResult count],(time/1000),(time%1000)];
 			[resultLabel setStringValue:resultString];
 		}
-				
+		[sResult release];
+
 		[searchProgress stopAnimation:nil];	
 	} else {
 		// set noResultView to box

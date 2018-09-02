@@ -125,8 +125,10 @@
 	[textView setRichText:NO];
 	[textView setImportsGraphics:NO];
 	NSString *txtString = [[[NSString alloc] initWithData:txtData encoding:NSUTF8StringEncoding] autorelease];
-	[textView replaceCharactersInRange:NSMakeRange(0,[[textView textStorage] length]) withString:txtString];
-	
+	if([txtString length] > 0) {
+        [textView replaceCharactersInRange:NSMakeRange(0,[[textView textStorage] length]) withString:txtString];
+	}
+
 	// deactivate save button
 	[saveButton setEnabled:NO];
 
