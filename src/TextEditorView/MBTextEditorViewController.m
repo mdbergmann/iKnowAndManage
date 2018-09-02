@@ -127,7 +127,9 @@
 	NSString *txtString = [[[NSString alloc] initWithData:txtData encoding:NSUTF8StringEncoding] autorelease];
 	if([txtString length] > 0) {
         [textView replaceCharactersInRange:NSMakeRange(0,[[textView textStorage] length]) withString:txtString];
-	}
+	} else {
+	    [textView setString:@""];
+    }
 
 	// deactivate save button
 	[saveButton setEnabled:NO];

@@ -266,7 +266,7 @@
             // the output string
             if(valuetype == BinaryValueType) {
                 // do base64 encoding
-                elemValDataStr = [aData encodeBase64WithNewlines:NO];
+                elemValDataStr = [aData encodeBase64WithNewlinesToString:NO];
             } else {
                 elemValDataStr = [[[NSString alloc] initWithData:aData encoding:NSUTF8StringEncoding] autorelease];
             }

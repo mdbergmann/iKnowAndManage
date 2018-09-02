@@ -39,7 +39,7 @@
         //const char *cStrData = NULL;
         if(type == BinaryValueType) {
             // do base64 encoding
-            stringData = [data encodeBase64WithNewlines:NO];
+            stringData = [data encodeBase64WithNewlinesToString:NO];
         } else {
             stringData = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
             //cStrData = [aData bytes];

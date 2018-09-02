@@ -35,6 +35,14 @@
     return [self base64EncodedDataWithOptions:options];
 }
 
+- (NSString *)encodeBase64WithNewlinesToString:(BOOL)encodeWithNewlines {
+    NSDataBase64EncodingOptions options = 0;
+    if(encodeWithNewlines) {
+        options = NSDataBase64EncodingEndLineWithLineFeed;
+    }
+    return [self base64EncodedStringWithOptions:options];
+}
+
 - (NSData *)decodeBase64WithNewlines:(BOOL)encodedWithNewlines {
     return [[[NSData alloc] initWithBase64EncodedData:self options:NSDataBase64DecodingIgnoreUnknownCharacters] autorelease];
 }

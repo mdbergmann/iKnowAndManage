@@ -24,6 +24,7 @@
 
 - (NSData *)encodeBase64;
 - (NSData *)encodeBase64WithNewlines:(BOOL)encodeWithNewlines;
+- (NSString *)encodeBase64WithNewlinesToString:(BOOL)encodeWithNewlines;
 - (NSData *)decodeBase64WithNewlines:(BOOL)encodedWithNewlines;
 
 @end
