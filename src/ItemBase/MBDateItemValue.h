@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBDateItemValue.h
 //  iKnowAndManage
 //
@@ -51,7 +51,7 @@ typedef enum AlarmRefType
 - (id)copyWithZone:(NSZone *)zone;
 
 // NSCoding stuff
-- (id)initWithCoder:(NSCoder *)decoder;
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED;
 - (void)encodeWithCoder:(NSCoder *)encoder;
 
 - (id)init;

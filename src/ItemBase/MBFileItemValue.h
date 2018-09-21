@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBFileItemValue.h
 //  iKnowAndManage
 //
@@ -30,7 +30,7 @@
 - (id)copyWithZone:(NSZone *)zone;
 
 // NSCoding stuff
-- (id)initWithCoder:(NSCoder *)decoder;
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED;
 - (void)encodeWithCoder:(NSCoder *)encoder;
 
 // inits

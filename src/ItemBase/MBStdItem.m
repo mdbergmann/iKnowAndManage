@@ -1,4 +1,4 @@
-//
+
 //  MBStdItem.m
 //  iKnowAndManage
 //
@@ -20,6 +20,7 @@
 #import "MBValueIndexController.h"
 #import "ColorRGBAArchiver.h"
 #import "MBPreferenceController.h"
+#import "MBSystemItem.h"
 
 #define ITEM_COMMENT_IDENTIFIER			@"itemcomment"
 #define ITEM_DATECREATED_IDENTIFIER		@"itemdatecreated"
@@ -220,19 +221,19 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBStdItem *newItem = nil;
 	
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemElement"];
 		// create commonitem with that
-		newItem = [[[MBStdItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBStdItem alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItem = [[[MBStdItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBStdItem alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItem;

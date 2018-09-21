@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBCommonItem.m
 //  iKnowAndManage
 //
@@ -483,19 +483,19 @@
 
 #pragma mark - NSCoding
 
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBCommonItem *newItem = nil;
     
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemElement"];
 		// create commonitem with that
-		newItem = [[[MBCommonItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBCommonItem alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItem = [[[MBCommonItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBCommonItem alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItem;

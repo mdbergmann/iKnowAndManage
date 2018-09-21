@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBImageItemValue.m
 //  iKnowAndManage
 //
@@ -87,19 +87,19 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBPDFItemValue *newItemval = nil;
 	
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemValueElement"];
 		// create commonitem with that
-		newItemval = [[[MBPDFItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBPDFItemValue alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItemval = [[[MBPDFItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBPDFItemValue alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItemval;

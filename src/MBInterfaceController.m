@@ -535,8 +535,8 @@ and information of the selected ItemValue is shown.
 		}
 		
 		// add pb type
-		[types addObject:COMMON_ITEM_PB_TYPE_NAME];
 		type = COMMON_ITEM_PB_TYPE_NAME;
+		[types addObject:type];
 		// declare type
 		[pb declareTypes:types owner:self];
 
@@ -648,10 +648,9 @@ and information of the selected ItemValue is shown.
 					}
 					
 					[elementController setOversizeDataImportPath:TMPFOLDER];
-					NSArray *pdDataArray = [NSKeyedUnarchiver unarchiveObjectWithData:pbData];
-					//NSArray *pdDataArray = [NSUnarchiver unarchiveObjectWithData:pbData];
-					
-					double count = 0;
+                    NSArray *pdDataArray = [NSKeyedUnarchiver unarchiveObjectWithData:pbData];
+
+                    double count = 0;
 					// input that stuff
 					if([type isEqualToString:COMMON_ITEM_PB_TYPE_NAME]) {
 						if([pdDataArray count] > 0) {

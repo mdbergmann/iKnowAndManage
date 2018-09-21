@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBDateItemValue.m
 //  iKnowAndManage
 //
@@ -726,8 +726,7 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder
-{
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBDateItemValue *newItemval = nil;
 	
 	/*
@@ -752,14 +751,14 @@
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemValueElement"];
 		// create commonitem with that
-		newItemval = [[[MBDateItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBDateItemValue alloc] initWithInitializedElement:elem];
 	}
 	else
 	{
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItemval = [[[MBDateItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBDateItemValue alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItemval;

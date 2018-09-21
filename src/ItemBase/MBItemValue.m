@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBItemValue.m
 //  iKnowAndManage
 //
@@ -283,19 +283,19 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBItemValue *newItemval = nil;
 	
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemValueElement"];
 		// create commonitem with that
-		newItemval = [[[MBItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBItemValue alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItemval = [[[MBItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBItemValue alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItemval;

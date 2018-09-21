@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBItem.h
 //  iKnowAndManage
 //
@@ -50,7 +50,7 @@ typedef enum {
 - (id)copyFlat;
 
 // NSCoding stuff
-- (id)initWithCoder:(NSCoder *)decoder;
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED;
 - (void)encodeWithCoder:(NSCoder *)encoder;
 
 // inits

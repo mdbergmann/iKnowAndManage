@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBExtendedTextItemValue.m
 //  iKnowAndManage
 //
@@ -184,19 +184,19 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBExtendedTextItemValue *newItemval = nil;
 	
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemValueElement"];
 		// create commonitem with that
-		newItemval = [[[MBExtendedTextItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBExtendedTextItemValue alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItemval = [[[MBExtendedTextItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBExtendedTextItemValue alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItemval;

@@ -1,4 +1,4 @@
-//
+#import <CoreGraphics/CoreGraphics.h>//
 //  MBCurrencyItemValue.m
 //  iKnowAndManage
 //
@@ -173,8 +173,7 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder
-{
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBCurrencyItemValue *newItemval = nil;
 	
 	/*
@@ -199,14 +198,14 @@
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemValueElement"];
 		// create commonitem with that
-		newItemval = [[[MBCurrencyItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBCurrencyItemValue alloc] initWithInitializedElement:elem];
 	}
 	else
 	{
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItemval = [[[MBCurrencyItemValue alloc] initWithInitializedElement:elem] autorelease];
+		newItemval = [[MBCurrencyItemValue alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItemval;

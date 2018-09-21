@@ -1,4 +1,4 @@
-//
+
 //  MBRefItem.m
 //  iKnowAndManage
 //
@@ -239,19 +239,19 @@
 //--------------------------------------------------------------------
 //------------- NSCoding protocoll -----------------------------------
 //--------------------------------------------------------------------
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	MBRefItem *newItem = nil;
 	
 	if([decoder allowsKeyedCoding]) {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObjectForKey:@"ItemElement"];
 		// create commonitem with that
-		newItem = [[[MBRefItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBRefItem alloc] initWithInitializedElement:elem];
 	} else {
 		// decode the only encoded object
 		MBElement *elem = [decoder decodeObject];
 		// create commonitem with that
-		newItem = [[[MBRefItem alloc] initWithInitializedElement:elem] autorelease];
+		newItem = [[MBRefItem alloc] initWithInitializedElement:elem];
 	}
 	
 	return newItem;

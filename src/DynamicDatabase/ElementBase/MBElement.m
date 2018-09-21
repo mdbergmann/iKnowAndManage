@@ -1,4 +1,4 @@
-//
+
 //  MBElement.m
 //  iKnowAndManage
 //
@@ -811,9 +811,9 @@
 
 #pragma mark - NSCoding
 
-- (id)initWithCoder:(NSCoder *)decoder {
+- (id)initWithCoder:(NSCoder *)decoder NS_RETURNS_RETAINED {
 	// first create a new MBElement
-	MBElement *newElem = [[[MBElement alloc] init] autorelease];
+	MBElement *newElem = [[MBElement alloc] init];
 
 	if([decoder allowsKeyedCoding]) {
 		// decode the data and create a MBElement with it
