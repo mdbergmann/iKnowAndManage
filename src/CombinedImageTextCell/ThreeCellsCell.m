@@ -78,7 +78,7 @@
 - (void)dealloc {
     [self setImage:nil];
     [self setRightImage:nil];
-    [countFont release];
+    //[countFont release];
     [self setTextColor:nil];
     
     [super dealloc];
