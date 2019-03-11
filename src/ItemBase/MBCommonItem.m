@@ -144,7 +144,7 @@
 		NSEnumerator *iter = [[aElement elementValues] objectEnumerator];
 		MBElementValue *elemval = nil;
 		while((elemval = [iter nextObject])) {
-			[attributeDict setObject:elemval forKey:[elemval identifier]];
+			attributeDict[[elemval identifier]] = elemval;
 		}
 		
 		// init ref dict
@@ -203,7 +203,7 @@
             break;
     }
 	[element addElementValue:elemval];
-	[attributeDict setObject:elemval forKey:anIdentifier];
+	attributeDict[anIdentifier] = elemval;
 	[elemval release];
     
     // do this later to have the index written
@@ -312,7 +312,7 @@
  */
 - (void)registerAtTarget:(MBRefItem *)refItem {
 	if(refItem != nil) {
-		[refDict setObject:refItem forKey:[NSNumber numberWithInt:[refItem itemID]]];
+		refDict[@([refItem itemID])] = refItem;
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -registerAtTarget:] ref item is nil!");
 	}
@@ -323,7 +323,7 @@
  */
 - (void)deregisterAtTarget:(MBRefItem *)refItem {
 	if(refItem != nil) {
-		[refDict removeObjectForKey:[NSNumber numberWithInt:[refItem itemID]]];
+		[refDict removeObjectForKey:@([refItem itemID])];
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -deregisterAtTarget:] ref item is nil!");	
 	}
@@ -338,7 +338,7 @@
 
 // get elementvalues
 - (MBElementValue *)elementValueForIdentifier:(NSString *)identifier {
-	return [attributeDict objectForKey:identifier];
+	return attributeDict[identifier];
 }
 
 // abstract method
@@ -377,7 +377,7 @@
 			if(encData != nil) {
 				if([encData length] == [srcData length]) {
 					// do base64 encoding of data and write to db
-					NSData *base64Enc = [[encData encodeBase64] dataUsingEncoding:NSASCIIStringEncoding];
+					NSData *base64Enc = [encData encodeBase64];
 					if(base64Enc == nil) {
 						CocoLog(LEVEL_WARN,@"[MBCommonItem -encryptWithString:] could not base64 encode encrypted data!");
 						ret = MBCryptoUnableToEncrypt;
@@ -552,7 +552,7 @@
 		return (MBEncryptionState) [[elemval valueDataAsNumber] intValue];
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -encryptionState:] elementvalue is nil, creating it!");
-        [self createAttributeForValue:[NSNumber numberWithInt:EncryptionNone] 
+        [self createAttributeForValue:@(EncryptionNone)
                         withValueType:NumberValueType 
                            identifier:ITEM_ENCRYPTION_IDENTIFIER];
 	}		
@@ -565,11 +565,11 @@
 	if(elemval != nil) {
 		if([[elemval valueDataAsNumber] intValue] != aState) {
 			// set value
-			[elemval setValueDataAsNumber:[NSNumber numberWithInt:aState]];
+			[elemval setValueDataAsNumber:@(aState)];
 		}
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -setEncryptionState:] elementvalue is nil, creating it!");		
-        [self createAttributeForValue:[NSNumber numberWithInt:aState] 
+        [self createAttributeForValue:@(aState)
                         withValueType:NumberValueType 
                            identifier:ITEM_ENCRYPTION_IDENTIFIER];
 	}		
@@ -591,12 +591,12 @@
 	if(elemval != nil) {
 		if([[elemval valueDataAsNumber] intValue] != aSortorder) {
 			// set value
-			[elemval setValueDataAsNumber:[NSNumber numberWithInt:aSortorder]];
+			[elemval setValueDataAsNumber:@(aSortorder)];
             
             if([self isKindOfClass:[MBItemValue class]]) {
                 // sort itemvalue list new
                 MBItemBaseController *ibc = itemController;
-                [ibc sortItemValuesOfItems:[NSArray arrayWithObject:[self item]] usingSortDescriptors:[ibc itemValueListSortDescriptors]];                
+				[ibc sortItemValuesOfItems:@[[self item]] usingSortDescriptors:[ibc itemValueListSortDescriptors]];
             }
             
 			// send Notification
@@ -610,7 +610,7 @@
 		}
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -setSortorder:] elementvalue is nil, creating it!");        
-        [self createAttributeForValue:[NSNumber numberWithInt:0]
+        [self createAttributeForValue:@0
                         withValueType:NumberValueType 
                            identifier:identifier 
                          memFootprint:FullCacheMemFootprintType 
@@ -632,7 +632,7 @@
 		ret = [[elemval valueDataAsNumber] intValue];
 	} else {
 		CocoLog(LEVEL_WARN,@"[MBCommonItem -sortorder] elementvalue is nil, creating it!");
-        [self createAttributeForValue:[NSNumber numberWithInt:0]
+        [self createAttributeForValue:@0
                         withValueType:NumberValueType 
                            identifier:identifier 
                          memFootprint:FullCacheMemFootprintType 
@@ -650,12 +650,12 @@
 		CocoLog(LEVEL_ERR,@"[MBCommonItem -identifier] element is nil!");		
 	}
 	
-	return -1;
+	return (MBTypeIdentifier) -1;
 }
 
 - (void)setIdentifier:(MBTypeIdentifier)aIdentifier {
 	if(element != nil) {
-		[element setIdentifier:[[NSNumber numberWithInt:aIdentifier] stringValue]];
+		[element setIdentifier:[@(aIdentifier) stringValue]];
 	} else {
 		CocoLog(LEVEL_ERR,@"[MBCommonItem -setIdentifier] element is nil!");		
 	}
