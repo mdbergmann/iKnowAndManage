@@ -1,4 +1,4 @@
-#import <CoreGraphics/CoreGraphics.h>//
+
 //  MBCommonItem.m
 //  iKnowAndManage
 //
@@ -343,7 +343,7 @@
 
 // abstract method
 - (void)writeValueIndexEntryWithCreate:(BOOL)flag {
-	CocoLog(LEVEL_WARN,@"[MBCommonItem -writeValueIndexEntryWithCreate:] called on commonItem!");
+	CocoLog(LEVEL_WARN,@"called on commonItem!");
 }
 
 /**
@@ -358,12 +358,12 @@
 	// check source data
 	if(sourceData == nil) {
 		ret = MBCryptoArgumentError;
-		CocoLog(LEVEL_WARN,@"[MBCommonItem -doEncryptionOfData:withKeyString:encryptedData:] sourceData is either nil or empty!");
+		CocoLog(LEVEL_WARN,@"sourceData is either nil or empty!");
 	} else {
 		// check keyString
 		if((aKeyString == nil) || ([aKeyString length] == 0)) {
 			ret = MBCryptoArgumentError;
-			CocoLog(LEVEL_WARN,@"[MBCommonItem -doEncryptionOfData:withKeyString:encryptedData:] key string is either nil or empty!");
+			CocoLog(LEVEL_WARN,@"key string is either nil or empty!");
 		} else {
 			// we even encrypt empty data, this means no big waste of time since this should go fast
 			// and we can check the password of the to be decrypted item first
@@ -375,23 +375,18 @@
 			// encrypt comment
 			NSData *encData = [srcData blowfishEncryptedDataForKey:aKeyString];
 			if(encData != nil) {
-				if([encData length] == [srcData length]) {
-					// do base64 encoding of data and write to db
-					NSData *base64Enc = [encData encodeBase64];
-					if(base64Enc == nil) {
-						CocoLog(LEVEL_WARN,@"[MBCommonItem -encryptWithString:] could not base64 encode encrypted data!");
-						ret = MBCryptoUnableToEncrypt;
-						*encryptedData = nil;
-					} else {
-						// all went good, copy reference
-						*encryptedData = base64Enc;
-					}
-				} else {
-					CocoLog(LEVEL_WARN,@"[MBCommonItem -encryptWithString:] datasize of encrypted does not match original!");
+				// do base64 encoding of data and write to db
+				NSData *base64Enc = [encData encodeBase64];
+				if(base64Enc == nil) {
+					CocoLog(LEVEL_WARN,@"could not base64 encode encrypted data!");
 					ret = MBCryptoUnableToEncrypt;
+					*encryptedData = nil;
+				} else {
+					// all went good, copy reference
+					*encryptedData = base64Enc;
 				}
 			} else {
-				CocoLog(LEVEL_WARN,@"[MBCommonItem -encryptWithString:] cannot encrypt string!");
+				CocoLog(LEVEL_WARN,@"cannot encrypt string!");
 				ret = MBCryptoUnableToEncrypt;
 			}
 		}
@@ -406,56 +401,51 @@
 	// check source data
 	if(encryptedData == nil) {
 		ret = MBCryptoArgumentError;
-		CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] encryptedData is either nil or empty!");
+		CocoLog(LEVEL_WARN, @"encryptedData is either nil or empty!");
 	} else {
 		// check keyString
 		if((aKeyString == nil) || ([aKeyString length] == 0)) {
 			ret = MBCryptoArgumentError;
-			CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] key string is either nil or empty!");
+			CocoLog(LEVEL_WARN, @"key string is either nil or empty!");
 		} else {
 			// if the encrypted data is empty, return an empty data object
 			if([encryptedData length] == 0) {
 				*decryptedData = [NSData data];
 			} else {
 				// do base64 decode
-				NSData *base64DecData = [[[[NSString alloc] initWithData:encryptedData encoding:NSASCIIStringEncoding] autorelease] decodeBase64];
+				NSData *base64DecData = [[[[NSString alloc] initWithData:encryptedData encoding:NSUTF8StringEncoding] autorelease] decodeBase64];
 				if(base64DecData != nil) {
 					// encrypt comment
 					NSData *decData = [base64DecData blowfishDecryptedDataForKey:aKeyString];
 					if(decData != nil) {
 						NSUInteger decryptedLength = [decData length];
-						if(decryptedLength == [base64DecData length]) {
-							// lets see, if we have our added byte sequence at the end of the data instance
-							NSData *addData = [@"22M09B73" dataUsingEncoding:NSASCIIStringEncoding];
-							NSUInteger addLength = [addData length];
-							if(decryptedLength >= addLength) {
-								// go ahead, all right until here
-								// extract the last bytes end compare
-								NSData *mySeq = [decData subdataWithRange:NSMakeRange((decryptedLength - addLength),addLength)];
-								if([mySeq isEqualToData:addData]) {
-									// right password, we got the right data back
-									// extract data without added seq
-									NSData *data = [decData subdataWithRange:NSMakeRange(0,(decryptedLength - addLength))];
-									// copy reference
-									*decryptedData = data;
-								} else {
-									CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] decrypted data is not the same as the original, password was probably not correct!");
-									ret = MBCryptoWrongDecryptionKey;									
-								}
-							} else {
-								CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] decrypted data does not have the right length!");
-								ret = MBCryptoUnableToDecrypt;
-							}							
-						} else {
-							CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] datasize of decrypted does not match original!");
-							ret = MBCryptoUnableToDecrypt;
-						}
+                        // lets see, if we have our added byte sequence at the end of the data instance
+                        NSData *addData = [@"22M09B73" dataUsingEncoding:NSASCIIStringEncoding];
+                        NSUInteger addLength = [addData length];
+                        if(decryptedLength >= addLength) {
+                            // go ahead, all right until here
+                            // extract the last bytes end compare
+                            NSData *mySeq = [decData subdataWithRange:NSMakeRange((decryptedLength - addLength),addLength)];
+                            if([mySeq isEqualToData:addData]) {
+                                // right password, we got the right data back
+                                // extract data without added seq
+                                NSData *data = [decData subdataWithRange:NSMakeRange(0,(decryptedLength - addLength))];
+                                // copy reference
+                                *decryptedData = data;
+                            } else {
+                                CocoLog(LEVEL_WARN, @"decrypted data is not the same as the original, password was probably not correct!");
+                                ret = MBCryptoWrongDecryptionKey;
+                            }
+                        } else {
+                            CocoLog(LEVEL_WARN, @"decrypted data does not have the right length!");
+                            ret = MBCryptoUnableToDecrypt;
+                        }
 					} else {
-						CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] cannot decrypt encrypted data!");
+						CocoLog(LEVEL_WARN, @"cannot decrypt encrypted data!");
 						ret = MBCryptoUnableToDecrypt;
 					}
 				} else {
-					CocoLog(LEVEL_WARN,@"[MBCommonItem -doDecryptionOfData:withKeyString:decryptedData:] could not decode base64!");					
+					CocoLog(LEVEL_WARN, @"could not decode base64!");
 					ret = MBCryptoUnableToDecrypt;
 				}
 			}

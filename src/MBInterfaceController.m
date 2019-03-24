@@ -1715,7 +1715,7 @@ and information of the selected ItemValue is shown.
 		// start password dialog
 		[pwC runSingleInputWindow];
 		// ask for dialog result
-		CocoLog(LEVEL_DEBUG,@"back from Password Window");
+		CocoLog(LEVEL_DEBUG, @"back from Password Window");
 		// get result
 		if([pwC dialogResult] == PasswordOK) {
 			// get password

@@ -71,7 +71,7 @@
 		}
 		else
 		{
-			CocoLog(LEVEL_ERR,@"[MBPasswordInputController]: cannot load PasswordInput.nib!");
+			CocoLog(LEVEL_ERR, @"cannot load PasswordInput.nib!");
 		}
 	}
 	
@@ -175,7 +175,7 @@
 	
 	if(inputWindowType == DoubleInput)
 	{
-		if([self checkPassword] == YES)
+		if([self checkPassword])
 		{
 			[okButtonDouble setEnabled:YES];
 			[currentWindow setDefaultButtonCell:[okButtonDouble cell]];
@@ -187,7 +187,7 @@
 {
 	[self setRepeat:[[sender stringValue] sha1Hash]];
 
-	if([self checkPassword] == YES)
+	if([self checkPassword])
 	{
 		[okButtonDouble setEnabled:YES];
 		[currentWindow setDefaultButtonCell:[okButtonDouble cell]];

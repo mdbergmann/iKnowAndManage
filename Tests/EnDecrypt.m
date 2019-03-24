@@ -34,7 +34,7 @@
     // decrypt
     NSLog(@"decrypting...");
     NSData *decData = [MBCryptoProvider doBlowfishDecryptionOfData:encData withKey:keyStr];
-    NSLog(@"decData:%s", [decData bytes]);
+    NSLog(@"decData:%s", (char *) [decData bytes]);
     XCTAssertNotNil(decData, @"decrypted data is nil!");
     
     // turn into string
